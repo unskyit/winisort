@@ -87,10 +87,10 @@ git push -u origin main
 ```
 3. In your GitHub repository, navigate to **Settings -> Pages**.
 4. Under **Build and deployment -> Source**, select **GitHub Actions**.
-5. The included `.github/workflows/deploy.yml` workflow will automatically run tests and publish `dist/` to `https://<your-username>.github.io/winisort/`.
+5. The included `.github/workflows/deploy.yml` workflow will automatically run tests and publish `dist/` to `https://unskyit.github.io/winisort/`.
 
 ### 12. Configure Repository Subpath Deployment
-`vite.config.js` defaults to `base: process.env.BASE_PATH || './'`, and `manifest.webmanifest` + `sw.js` use relative `./` paths. This means WiniSort works seamlessly at both a root domain (`https://example.com/`) and any GitHub Pages repository subpath (`https://username.github.io/winisort/`) without code changes.
+`vite.config.js` defaults to `base: process.env.BASE_PATH || './'`, and `manifest.webmanifest` + `sw.js` use relative `./` paths. This means WiniSort works seamlessly at both a root domain (`https://unskyit.com/`) and any GitHub Pages repository subpath (`https://unskyit.github.io/winisort/`) without code changes.
 
 ### 13. Install WiniSort as a Desktop or Mobile PWA
 1. Open your deployed HTTPS URL (or `http://localhost:4173`) in Chrome, Edge, Android Chrome, or iOS Safari.
