@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'WiniSans';
+  src: url('/fonts/WiniSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WiniSans';
+  src: url('/fonts/WiniSans-Bold.woff2') format('woff2');
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Typography */
+  --font-sans: 'WiniSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  /* Light Theme Palette (Default) */
+  --bg-main: #F6F8FC;
+  --bg-deep: #EDF2F8;
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #EDF2F8;
+  --surface-elevated: rgba(255, 255, 255, 0.88);
+  --text-primary: #172235;
+  --text-secondary: #687589;
+  --text-muted: #8795A8;
+  --accent-main: #5286DB;
+  --accent-hover: #3E72C7;
+  --accent-subtle: #E7F0FF;
+  --border-hairline: #E2E8F0;
+  --border-strong: #CBD5E1;
+
+  /* Status Colors */
+  --status-success: #2F9E66;
+  --status-success-bg: #E6F6EE;
+  --status-warning: #D9822B;
+  --status-warning-bg: #FDF3E7;
+  --status-danger: #D64545;
+  --status-danger-bg: #FDECEC;
+
+  /* Curated Harmonious Destination Accent Palette */
+  --dest-blue: #5286DB;
+  --dest-indigo: #6875F5;
+  --dest-teal: #319795;
+  --dest-emerald: #38A169;
+  --dest-amber: #D69E2E;
+  --dest-orange: #DD6B20;
+  --dest-rose: #E53E3E;
+  --dest-purple: #805AD5;
+  --dest-cyan: #00A3C4;
+  --dest-pink: #D53F8C;
+
+  /* Elevation & Depth */
+  --shadow-xs: 0 1px 2px rgba(23, 34, 53, 0.04);
+  --shadow-sm: 0 2px 6px rgba(23, 34, 53, 0.06), 0 1px 2px rgba(23, 34, 53, 0.04);
+  --shadow-md: 0 8px 24px rgba(23, 34, 53, 0.08), 0 2px 6px rgba(23, 34, 53, 0.04);
+  --shadow-lg: 0 18px 42px rgba(23, 34, 53, 0.14), 0 4px 12px rgba(23, 34, 53, 0.06);
+  --backdrop-blur: blur(14px);
+
+  /* Spacing & Density */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 9999px;
+
+  --toolbar-height: 54px;
+  --bank-top-height: 78px;
+  --bank-bottom-height: 82px;
+  --bank-side-width: 248px;
+  --card-pad: 10px 12px;
+  --gap-sm: 6px;
+  --gap-md: 10px;
+  --gap-lg: 16px;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 140ms;
+  --duration-normal: 240ms;
+  --duration-slow: 420ms;
+}

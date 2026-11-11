@@ -1,0 +1,68 @@
+[data-theme="dark"] {
+  --bg-main: #050608;
+  --bg-deep: #000000;
+  --surface-primary: #101217;
+  --surface-secondary: #171B22;
+  --surface-elevated: rgba(16, 18, 23, 0.90);
+  --text-primary: #E0E6EF;
+  --text-secondary: #99A5B5;
+  --text-muted: #687589;
+  --accent-main: #78A9EA;
+  --accent-hover: #92BCF2;
+  --accent-subtle: #17263A;
+  --border-hairline: #252B35;
+  --border-strong: #343D4B;
+
+  --status-success: #48BB78;
+  --status-success-bg: #142E22;
+  --status-warning: #ED8936;
+  --status-warning-bg: #2E2114;
+  --status-danger: #F56565;
+  --status-danger-bg: #321818;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.8);
+}
+
+/* Reduced transparency mode */
+[data-transparency="reduced"] {
+  --surface-elevated: var(--surface-primary);
+  --backdrop-blur: none;
+}
+
+/* Interface density modes */
+[data-density="compact"] {
+  --toolbar-height: 46px;
+  --bank-top-height: 66px;
+  --bank-bottom-height: 68px;
+  --bank-side-width: 214px;
+  --card-pad: 7px 10px;
+  --gap-sm: 4px;
+  --gap-md: 8px;
+  --gap-lg: 12px;
+}
+
+[data-density="spacious"] {
+  --toolbar-height: 60px;
+  --bank-top-height: 88px;
+  --bank-bottom-height: 92px;
+  --bank-side-width: 276px;
+  --card-pad: 12px 14px;
+}
+
+/* Reduced motion mode */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+  }
+}
+
+[data-motion="reduced"] {
+  --duration-fast: 0ms;
+  --duration-normal: 0ms;
+  --duration-slow: 0ms;
+}

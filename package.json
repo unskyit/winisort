@@ -1,0 +1,32 @@
+{
+  "name": "winisort",
+  "version": "1.0.0",
+  "description": "WiniSort \u2014 Local-first visual file and media organizer. Your files. Your folders. Your freedom.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/verify-build.js",
+    "preview": "vite preview --port 4173",
+    "test": "node --test tests/unit/*.test.js tests/integration/*.test.js",
+    "test:unit": "node --test tests/unit/*.test.js",
+    "test:integration": "node --test tests/integration/*.test.js",
+    "test:e2e": "playwright test",
+    "generate:icons": "node scripts/generate-pwa-icons.js"
+  },
+  "keywords": [
+    "file-organizer",
+    "media-sorter",
+    "local-first",
+    "filesystem-access-api",
+    "pwa",
+    "offline-first"
+  ],
+  "author": "WiniSort Engineering",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.4.10",
+    "vitest": "^2.1.4",
+    "@playwright/test": "^1.48.2"
+  }
+}

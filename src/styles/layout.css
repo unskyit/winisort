@@ -1,0 +1,217 @@
+#app-root {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--bg-main);
+  overflow: hidden;
+}
+
+/* Top Application Toolbar */
+.ws-toolbar {
+  height: var(--toolbar-height);
+  min-height: var(--toolbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  background-color: var(--surface-primary);
+  border-bottom: 1px solid var(--border-hairline);
+  gap: 10px;
+  z-index: 30;
+}
+
+.ws-toolbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: max-content;
+}
+
+.ws-brand-emblem {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent-main), #2F5FB3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: var(--shadow-xs);
+}
+
+.ws-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.ws-brand-title {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ws-brand-tagline {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.ws-toolbar-actions, .ws-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.ws-toolbar-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 180px;
+  max-width: 280px;
+  flex: 1;
+}
+
+.ws-toolbar-search input {
+  width: 100%;
+  height: 32px;
+  padding: 0 28px 0 30px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-hairline);
+  background: var(--surface-secondary);
+  color: var(--text-primary);
+  font-size: 12.5px;
+  transition: border-color var(--duration-fast), background-color var(--duration-fast);
+}
+
+.ws-toolbar-search input:focus {
+  background: var(--surface-primary);
+  border-color: var(--accent-main);
+  outline: none;
+}
+
+.ws-search-icon {
+  position: absolute;
+  left: 9px;
+  color: var(--text-secondary);
+  pointer-events: none;
+  font-size: 13px;
+}
+
+.ws-search-kbd {
+  position: absolute;
+  right: 7px;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--surface-primary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-hairline);
+  pointer-events: none;
+}
+
+/* Compatibility & Status Banner */
+.ws-compat-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 14px;
+  font-size: 12px;
+  background-color: var(--accent-subtle);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-hairline);
+  gap: 12px;
+  z-index: 25;
+}
+
+.ws-compat-banner.is-warning {
+  background-color: var(--status-warning-bg);
+}
+
+/* 5-Region Workspace Grid */
+.ws-workspace {
+  flex: 1;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: var(--bank-side-width) 1fr var(--bank-side-width);
+  grid-template-areas:
+    "top top top"
+    "left center right"
+    "bottom bottom bottom";
+  overflow: hidden;
+  position: relative;
+}
+
+.ws-workspace.is-quick-sort,
+.ws-workspace.is-focus-mode {
+  grid-template-columns: 0px 1fr 0px;
+}
+
+.ws-bank-top {
+  grid-area: top;
+  min-height: var(--bank-top-height);
+  max-height: 112px;
+  border-bottom: 1px solid var(--border-hairline);
+  background-color: var(--surface-primary);
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.ws-bank-bottom {
+  grid-area: bottom;
+  min-height: var(--bank-bottom-height);
+  max-height: 116px;
+  border-top: 1px solid var(--border-hairline);
+  background-color: var(--surface-primary);
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.ws-bank-left {
+  grid-area: left;
+  width: var(--bank-side-width);
+  border-right: 1px solid var(--border-hairline);
+  background-color: var(--surface-primary);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.ws-bank-right {
+  grid-area: right;
+  width: var(--bank-side-width);
+  border-left: 1px solid var(--border-hairline);
+  background-color: var(--surface-primary);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.ws-center-stage {
+  grid-area: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-main);
+  overflow: hidden;
+}

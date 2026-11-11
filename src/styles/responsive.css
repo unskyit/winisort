@@ -1,0 +1,42 @@
+@media (max-width: 1024px) {
+  :root {
+    --bank-side-width: 196px;
+  }
+  .ws-brand-tagline {
+    display: none;
+  }
+}
+
+@media (max-width: 780px) {
+  .ws-workspace {
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "top"
+      "center"
+      "bottom";
+  }
+
+  .ws-bank-left,
+  .ws-bank-right {
+    display: none;
+  }
+
+  .ws-toolbar {
+    padding: 0 8px;
+    overflow-x: auto;
+  }
+
+  .ws-toolbar-search {
+    min-width: 130px;
+  }
+
+  .ws-btn {
+    min-height: 36px;
+  }
+
+  .ws-dest-card {
+    min-width: 148px;
+    min-height: 48px;
+  }
+}

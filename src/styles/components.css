@@ -1,0 +1,586 @@
+/* Buttons & Controls */
+.ws-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 11px;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background-color: var(--surface-secondary);
+  border: 1px solid var(--border-hairline);
+  transition: all var(--duration-fast) ease;
+  white-space: nowrap;
+}
+
+.ws-btn:hover:not(:disabled) {
+  background-color: var(--accent-subtle);
+  border-color: var(--accent-main);
+}
+
+.ws-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ws-btn-primary {
+  background-color: var(--accent-main);
+  color: #FFFFFF;
+  border-color: var(--accent-main);
+}
+
+.ws-btn-primary:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+  color: #FFFFFF;
+}
+
+.ws-btn-danger {
+  background-color: var(--status-danger-bg);
+  color: var(--status-danger);
+  border-color: var(--status-danger);
+}
+
+.ws-btn-icon {
+  width: 32px;
+  padding: 0;
+}
+
+.ws-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--surface-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-hairline);
+}
+
+.ws-badge-accent {
+  background: var(--accent-subtle);
+  color: var(--accent-main);
+  border-color: transparent;
+}
+
+/* Destination Bank Header / Strip */
+.ws-bank-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  padding: 2px 4px;
+  flex-shrink: 0;
+}
+
+.ws-bank-cards-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  overflow-x: auto;
+}
+
+.ws-bank-cards-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Folder Destination Card */
+.ws-dest-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--card-pad);
+  border-radius: var(--radius-md);
+  background-color: var(--surface-primary);
+  border: 1px solid var(--border-hairline);
+  box-shadow: var(--shadow-xs);
+  gap: 10px;
+  min-width: 175px;
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-out-expo),
+              border-color var(--duration-fast) ease,
+              background-color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease;
+  border-left: 3.5px solid var(--dest-color, var(--accent-main));
+}
+
+.ws-dest-card:hover {
+  border-color: var(--dest-color, var(--accent-main));
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.ws-dest-card.is-active {
+  background-color: var(--accent-subtle);
+  border-color: var(--dest-color, var(--accent-main));
+}
+
+.ws-dest-card.is-drop-target {
+  transform: scale(1.045);
+  border-color: var(--dest-color, var(--accent-main));
+  background-color: var(--accent-subtle);
+  box-shadow: 0 0 0 2px var(--dest-color, var(--accent-main)), var(--shadow-md);
+  z-index: 10;
+}
+
+.ws-dest-card.is-dimmed {
+  opacity: 0.62;
+}
+
+.ws-dest-card.is-compact {
+  min-width: 140px;
+  padding: 6px 9px;
+}
+
+.ws-dest-left {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  flex: 1;
+}
+
+.ws-dest-emoji {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: var(--surface-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.ws-dest-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ws-dest-name-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ws-dest-name {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ws-dest-meta {
+  font-size: 11px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ws-dest-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.ws-dest-shortcut {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--surface-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-hairline);
+}
+
+.ws-dest-action-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  transition: opacity var(--duration-fast), background-color var(--duration-fast);
+}
+
+.ws-dest-card:hover .ws-dest-action-btn {
+  opacity: 1;
+}
+
+.ws-dest-action-btn:hover {
+  background-color: var(--surface-secondary);
+  color: var(--text-primary);
+}
+
+/* Signature Central Media Pool & Tray */
+.ws-pool-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ws-collection-tray {
+  width: min(560px, 92%);
+  padding: 32px 28px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, var(--surface-primary) 0%, var(--surface-secondary) 100%);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: transform var(--duration-normal) var(--ease-out-expo), border-color var(--duration-normal);
+}
+
+.ws-collection-tray.is-dragover {
+  transform: scale(1.02);
+  border-color: var(--accent-main);
+  box-shadow: 0 0 0 3px var(--accent-subtle), var(--shadow-lg);
+}
+
+.ws-tray-well {
+  width: 96px;
+  height: 96px;
+  border-radius: 26px;
+  background: radial-gradient(circle at 35% 30%, var(--accent-subtle), var(--surface-secondary));
+  border: 1px solid var(--border-strong);
+  box-shadow: inset 0 6px 16px rgba(23, 34, 53, 0.08), var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.ws-tray-heading {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.ws-tray-subtext {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  max-width: 400px;
+}
+
+.ws-tray-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+/* Active Media Sorting Workspace (Split Pool Strip + Central Viewer) */
+.ws-active-workspace {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.ws-viewer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background-color: var(--surface-primary);
+  border-bottom: 1px solid var(--border-hairline);
+  gap: 12px;
+}
+
+.ws-viewer-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  background: radial-gradient(circle at center, var(--surface-secondary) 0%, var(--bg-main) 100%);
+}
+
+.ws-media-card {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-primary);
+  border: 1px solid var(--border-hairline);
+  box-shadow: var(--shadow-md);
+  padding: 12px;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+}
+
+.ws-media-card:active {
+  cursor: grabbing;
+}
+
+.ws-media-card img {
+  max-width: 100%;
+  max-height: calc(100vh - 360px);
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  transition: transform var(--duration-fast) ease;
+  pointer-events: none;
+}
+
+.ws-viewer-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: var(--surface-primary);
+  border-top: 1px solid var(--border-hairline);
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Collapsible Pool Strip at bottom of center stage */
+.ws-pool-strip {
+  height: 92px;
+  background-color: var(--surface-secondary);
+  border-top: 1px solid var(--border-hairline);
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.ws-pool-strip.is-collapsed {
+  height: 34px;
+  overflow: hidden;
+}
+
+.ws-pool-thumb {
+  width: 68px;
+  height: 68px;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-primary);
+  border: 2px solid var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  font-size: 10px;
+  padding: 4px;
+  text-align: center;
+}
+
+.ws-pool-thumb.is-current {
+  border-color: var(--accent-main);
+  box-shadow: 0 0 0 2px var(--accent-subtle);
+}
+
+.ws-pool-thumb.is-selected {
+  background-color: var(--accent-subtle);
+  border-color: var(--accent-main);
+}
+
+/* Modals, Dialogs & Command Palette */
+.ws-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(5, 6, 8, 0.58);
+  backdrop-filter: var(--backdrop-blur);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 100;
+}
+
+.ws-modal {
+  width: min(760px, 96vw);
+  max-height: 88vh;
+  background-color: var(--surface-primary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ws-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.ws-modal-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.ws-modal-body {
+  padding: 18px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.ws-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 18px;
+  border-top: 1px solid var(--border-hairline);
+  background-color: var(--surface-secondary);
+}
+
+/* Custom Video & Audio Players */
+.ws-video-player {
+  display: flex;
+  flex-direction: column;
+  width: min(720px, 85vw);
+  background: #0B0D12;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+}
+
+.ws-video-player video {
+  width: 100%;
+  max-height: calc(100vh - 380px);
+  background: #000;
+}
+
+.ws-media-custom-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--surface-primary);
+  color: var(--text-primary);
+  border-top: 1px solid var(--border-hairline);
+}
+
+.ws-audio-player {
+  width: min(500px, 86vw);
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-strong);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ws-waveform-bars {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  gap: 3px;
+}
+
+.ws-waveform-bar {
+  flex: 1;
+  background: var(--accent-main);
+  border-radius: 2px;
+  opacity: 0.55;
+  transition: opacity 0.15s ease, height 0.2s ease;
+}
+
+/* Toast Notifications */
+.ws-toast-Region {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 150;
+  pointer-events: none;
+}
+
+.ws-toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-md);
+  font-size: 12.5px;
+  min-width: 240px;
+  max-width: 380px;
+}
+
+/* Context Menu */
+.ws-context-menu {
+  position: fixed;
+  min-width: 200px;
+  background: var(--surface-primary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 5px;
+  z-index: 140;
+}
+
+.ws-context-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border-radius: var(--radius-xs);
+  font-size: 12.5px;
+  text-align: left;
+}
+
+.ws-context-item:hover {
+  background: var(--accent-subtle);
+  color: var(--accent-main);
+}
