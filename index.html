@@ -6,16 +6,18 @@
   <meta name="description" content="WiniSort — Your files. Your folders. Your freedom. Local-first visual file and media organizer." />
   <meta name="theme-color" content="#5286DB" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#050608" media="(prefers-color-scheme: dark)" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>WiniSort — Your files. Your folders. Your freedom.</title>
   <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
   <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="./assets/winisort.bundle.css" />
   <script src="./vendor/pdf.js" defer></script>
+  <script type="module" src="./src/main.js"></script>
 </head>
 <body>
   <div id="app-root" role="application" aria-label="WiniSort File and Media Organizer"></div>
-  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
