@@ -82,7 +82,7 @@ git init
 git add .
 git commit -m "Initial commit of WiniSort production application"
 git branch -M main
-git remote add origin https://github.com/<your-username>/winisort.git
+git remote add origin https://github.com/unskyit/winisort.git
 git push -u origin main
 ```
 3. In your GitHub repository, navigate to **Settings -> Pages**.
